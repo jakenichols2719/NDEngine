@@ -13,10 +13,12 @@ default: $(EXE)
 	g++ -c $(CFLG) $< $(LIBS)
 
 #compile object files here
-run.o: run.cpp ndgl.h
+cdstruct.o: cdstruct.h cdstruct.cpp
+load.o: load.cpp load.h cdstruct.h
+run.o: run.cpp ndgl.h load.h
 
 # list needed object files as dependencies here
-$(EXE): run.o
+$(EXE): run.o load.o cdstruct.o
 	$(COMP) -o $@ $^ $(LIBS)
 
 clean:
