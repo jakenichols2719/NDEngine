@@ -1,8 +1,10 @@
 #include "ndgl.h"
 #include "load.h"
-#include "ndstruct.h"
+#include "ndstatic.h"
 
 Sprite img;
+Sprite font;
+Dialog dia;
 
 void display(void)
 {
@@ -11,18 +13,24 @@ void display(void)
   glRasterPos2i (100, 100);
   glPixelZoom(WIN_S,WIN_S);
   drawLayout();
-  drawSprite(img, 100, 100, 2);
+  drawSprite(img, 0, 0);
+  drawDialog(dia, font, 288, 192, 0);
+  drawDialog(dia, font, 288, 144, 1);
   glutSwapBuffers();
 }
 
 int main(int argc, char** argv)
 {
-  img.w = 32;
-  img.h = 32;
-  img.ct = 3;
-  img.list = loadImage("character");
-  //glEnable(GL_ALPHA_TEST);
-  //glAlphaFunc(GL_GREATER, 0.5);
+  img.w = DIM_IMG;
+  img.h = DIM_IMG;
+  img.ct = 1;
+  img.list = loadImage("portrait");
+  font.w = 32;
+  font.h = 32;
+  font.ct = 26;
+  font.list = loadImage("font");
+  dia.ct = 2;
+  dia.list = loadDialog("test");
   startGL(&argc, argv);
   return 0;
 }

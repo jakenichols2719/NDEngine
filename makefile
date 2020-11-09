@@ -14,11 +14,12 @@ default: $(EXE)
 
 #compile object files here
 ndstruct.o: ndstruct.h ndstruct.cpp
+ndstatic.o: ndstatic.h ndstatic.cpp
 load.o: load.cpp load.h ndstruct.h
-run.o: run.cpp ndgl.h load.h
+run.o: run.cpp ndgl.h load.h ndstatic.h
 
 # list needed object files as dependencies here
-$(EXE): run.o load.o ndstruct.o
+$(EXE): run.o load.o ndstruct.o ndstatic.o
 	$(COMP) -o $@ $^ $(LIBS)
 
 clean:

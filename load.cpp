@@ -19,7 +19,7 @@ uint16_t* readBytes(std::ifstream* file, int* start, int end) {
 /*
 format raw bytes into an "image list" with 1 RGBA value to one variable
 */
-uint32_t* formatImgList(uint16_t* list, uint16_t size) {
+uint32_t* formatImgList(uint16_t* list, uint32_t size) {
   uint32_t* img = new uint32_t[size/4];
   //snag 4 bytes at a time
   for(int n=0; n<size; n+=4) {
@@ -39,7 +39,7 @@ uint32_t* loadImage(std::string name) {
   int cpos = 0;
   //read BMP header to get size and offset; always 12 bytes
   uint16_t* head = readBytes(&in, &cpos, 12);
-  uint16_t size = (head[3]<<8)+head[2];
+  uint32_t size = (head[5]<<24)+(head[4]<<16)+(head[3]<<8)+head[2];
   uint16_t offset = head[10];
   //move file forward to offset
   readBytes(&in, &cpos, offset);
@@ -51,4 +51,27 @@ uint32_t* loadImage(std::string name) {
   delete(img_raw);
   //return image
   return img;
+}
+
+
+std::string* readText(std::ifstream* file, int* start, int end) {
+  int count = end-*start; //number of lines to read
+  std::string* out = new std::string[count]; //output array of strings
+  char* temp;
+  for(int n=0; n<count; n++) {
+    std::getline(*file, out[n]);
+  }
+  *start = end; //set start to end
+  return out; //return output
+}
+
+std::string* loadDialog(std::string name) {
+  //open text file
+  std::string path = "res/dialog/"+name+".txt";
+  std::ifstream in (path);
+  //track position (lines in this case)
+  int cpos = 0;
+  int lines = std::stoi(readText(&in, &cpos, 1)[0]);
+  std::string* out = readText(&in, &cpos, lines);
+  return out;
 }

@@ -9,13 +9,15 @@
 #include <GL/glut.h>
 #include <iostream>
 
-int player_x = 7;
-int player_y = 2;
 
 //base resolution is 1080p
 const int WIN_W = 1920;
 const int WIN_H = 1080;
 float     WIN_S = 1.0;
+
+//constants for image sizes
+const int DIM_SPRITE = 32;
+const int DIM_IMG = 256;
 
 void init(void)
 {
@@ -46,16 +48,12 @@ void special(int key, int x, int y)
 {
   switch(key) {
     case GLUT_KEY_UP:
-      player_y++;
       break;
     case GLUT_KEY_DOWN:
-      player_y--;
       break;
     case GLUT_KEY_LEFT:
-      player_x--;
       break;
     case GLUT_KEY_RIGHT:
-      player_x++;
       break;
   }
   glutPostRedisplay();

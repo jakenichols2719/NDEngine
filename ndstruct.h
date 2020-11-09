@@ -4,6 +4,7 @@
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include <stdint.h>
+#include <string>
 
 struct Sprite {
   int w;
@@ -13,3 +14,11 @@ struct Sprite {
 };
 
 void drawSprite(Sprite s, int px_x, int px_y, int idx=0);
+
+struct Dialog {
+  int ct;
+  //int* dia_lens;
+  std::string* list;
+};
+
+void drawDialog(Dialog d, Sprite font, int px_x, int px_y, int idx=0);

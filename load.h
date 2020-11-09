@@ -7,4 +7,7 @@
 
 uint16_t* readBytes(std::ifstream* file, int* start, int end);
 uint32_t* formatImgList(uint32_t* list);
-uint32_t* loadImage(std::string);
+uint32_t* loadImage(std::string name);
+
+std::string* readText(std::ifstream* file, int* start, int end);
+std::string* loadDialog(std::string name);
