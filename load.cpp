@@ -1,10 +1,4 @@
-#include <stdint.h>
-#include <string>
-#include <iostream>
-#include <fstream>
-
 #include "load.h"
-#include "cdstruct.h"
 
 /*
 read bytes of a file (made for BMP) from start (inclusive) to end (exclusive)
@@ -52,5 +46,9 @@ uint32_t* loadImage(std::string name) {
   //read in image data
   uint16_t* img_raw = readBytes(&in, &cpos, size);
   uint32_t* img = formatImgList(img_raw, size-offset);
+  //free up memory
+  delete(head);
+  delete(img_raw);
+  //return image
   return img;
 }
