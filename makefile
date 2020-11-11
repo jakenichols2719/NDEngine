@@ -13,13 +13,14 @@ default: $(EXE)
 	g++ -c $(CFLG) $< $(LIBS)
 
 #compile object files here
+#try to keep this in inheritance order for readability
 ndstruct.o: ndstruct.h ndstruct.cpp
-ndstatic.o: ndstatic.h ndstatic.cpp
-load.o: load.cpp load.h ndstruct.h
-run.o: run.cpp ndgl.h load.h ndstatic.h
+load.o: load.cpp load.h ndstruct.o
+ndconst.o: ndconst.h ndconst.cpp ndstruct.o
+run.o: run.cpp ndgl.h ndstruct.o load.o ndconst.o
 
 # list needed object files as dependencies here
-$(EXE): run.o load.o ndstruct.o ndstatic.o
+$(EXE): run.o load.o ndstruct.o ndconst.o
 	$(COMP) -o $@ $^ $(LIBS)
 
 clean:

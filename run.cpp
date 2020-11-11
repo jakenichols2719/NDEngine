@@ -4,7 +4,7 @@
 
 Sprite img;
 Sprite font;
-Dialog dia;
+Text dia;
 
 void display(void)
 {
@@ -13,9 +13,9 @@ void display(void)
   glRasterPos2i (100, 100);
   glPixelZoom(WIN_S,WIN_S);
   drawLayout();
-  drawSprite(img, 0, 0);
-  drawDialog(dia, font, 288, 192, 0);
-  drawDialog(dia, font, 288, 144, 1);
+  Display_drawSprite(img, 0, 0);
+  drawText(dia, font, 288, 192, 0);
+  drawText(dia, font, 288, 144, 1);
   glutSwapBuffers();
 }
 

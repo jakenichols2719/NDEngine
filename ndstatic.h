@@ -1,5 +1,6 @@
 //static classes that are used for interacting with components of the screen
 #include "ndstruct.h"
+#include "ndconst.h"
 
 class Display {
 private:

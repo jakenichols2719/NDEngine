@@ -2,6 +2,20 @@
 #include <stdio.h>
 #include <iostream>
 
+/*
+struct Sprite {
+  int w;
+  int h;
+  int ct;
+  uint32_t* list;
+};
+
+struct Text {
+  int ct;
+  std::string* list;
+};
+
+/*
 void drawSprite(Sprite s, int px_x, int px_y, int idx) {
   if(idx >= s.ct) return; //return if idx is too high
   idx = s.ct-(idx+1); //invert index
@@ -26,3 +40,4 @@ void drawDialog(Dialog d, Sprite font, int px_x, int px_y, int idx) {
     px_x += 32;
   }
 }
+*/

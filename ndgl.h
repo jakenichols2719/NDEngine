@@ -8,12 +8,12 @@
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include <iostream>
-
+#include "ndconst.h"
 
 //base resolution is 1080p
-const int WIN_W = 1920;
-const int WIN_H = 1080;
-float     WIN_S = 1.0;
+//const int WIN_W = 1920;
+//const int WIN_H = 1080;
+//float     WIN_S = 1.0;
 
 //constants for image sizes
 const int DIM_SPRITE = 32;

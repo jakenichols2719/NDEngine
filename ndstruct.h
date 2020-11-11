@@ -1,3 +1,7 @@
+//include guards
+#ifndef NDSTRUCT_H_
+#define NDSTRUCT_H_
+
 //data structures to hold important data, and helper functions
 #include <stdint.h>
 #include <GL/gl.h>
@@ -13,12 +17,9 @@ struct Sprite {
   uint32_t* list;
 };
 
-void drawSprite(Sprite s, int px_x, int px_y, int idx=0);
-
-struct Dialog {
+struct Text {
   int ct;
-  //int* dia_lens;
   std::string* list;
 };
 
-void drawDialog(Dialog d, Sprite font, int px_x, int px_y, int idx=0);
+#endif
