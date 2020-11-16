@@ -13,10 +13,6 @@ void display(void)
   glRasterPos2i (100, 100);
   glPixelZoom(WIN_S,WIN_S);
   drawLayout();
-  //Display_drawSprite(img, 0, 0);
-  Display_drawText(dia, font, 288, 192, 0);
-  Display_drawText(dia, font, 288, 144, 1);
-  Display_drawSprite(font, 0, 0, 40);
   glutSwapBuffers();
 }
 
@@ -30,7 +26,7 @@ int main(int argc, char** argv)
   font.h = 16;
   font.ct = 64;
   font.list = loadImage("font");
-  dia.ct = 2;
+  dia.ct = 1;
   dia.list = loadDialog("test");
   startGL(&argc, argv);
   return 0;

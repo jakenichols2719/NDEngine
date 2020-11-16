@@ -1,6 +1,6 @@
 COMP=g++
 CFLAGS=-Wall
-EXE=run
+EXE=run.exe
 LIBS=-lglut -lGLU -lGL -lm
 
 #default rule
