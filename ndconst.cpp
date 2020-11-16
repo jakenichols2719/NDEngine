@@ -53,8 +53,19 @@ void drawText(std::string d, Sprite font, int px_x, int px_y) {
  * as well as functions to draw at their positions
 */
 const int O_DISP_X=256, O_DISP_Y=256, D_DISP_W=1664, D_DISP_H=768;
-void Display_drawSprite(Sprite x, int px_x, int px_y, int idx) {
-  drawSprite(x, px_x+O_DISP_X, px_y+O_DISP_Y, idx);
+void Display_drawSprite(Sprite s, int px_x, int px_y, int idx) {
+  //clip sprite if needed
+  if((px_x<0 || px_x+s.w > D_DISP_W) || (px_y<0 || px_y+s.h > D_DISP_H)) {
+    int bl_x=0, bl_y=0, tr_x=0, tr_y=0;
+    if(px_x<0) bl_x = px_x*-1;
+    if(px_x+s.w > D_DISP_W) tr_x = px_x+s.w-D_DISP_W;
+    if(px_y<0) bl_y = px_y*-1;
+    if(px_y+s.h > D_DISP_H) tr_y = px_y+s.h-D_DISP_H;
+    //printf("(%d, %d), (%d, %d), (%d, %d)\n", bl_x, bl_y, tr_x, tr_y, px_x+bl_x, px_y+bl_y);
+    drawSprite(subSprite(s,bl_x,bl_y,tr_x,tr_y,idx),px_x+bl_x+O_DISP_X,px_y+bl_y+O_DISP_Y);
+  } else {
+    drawSprite(s, px_x+O_DISP_X, px_y+O_DISP_Y, idx);
+  }
 }
 void Display_drawText(Text d, Sprite font, int px_x, int px_y, int idx) {
   int end_px = px_x + d.list[0].length()*font.h;
@@ -76,8 +87,18 @@ void Display_drawText(std::string d, Sprite font, int px_x, int px_y) {
 }
 
 const int O_DIA_X=256, O_DIA_Y=0, D_DIA_W=1664, D_DIA_H=256;
-void Dialog_drawSprite(Sprite x, int px_x, int px_y, int idx) {
-  drawSprite(x, px_x+O_DIA_X, px_y+O_DIA_Y, idx);
+void Dialog_drawSprite(Sprite s, int px_x, int px_y, int idx) {
+  //clip sprite if needed
+  if((px_x<0 || px_x+s.w > D_DIA_W) || (px_y<0 || px_y+s.h > D_DIA_H)) {
+    int bl_x=0, bl_y=0, tr_x=0, tr_y=0;
+    if(px_x<0) bl_x = px_x*-1;
+    if(px_x+s.w > D_DIA_W) tr_x = px_x+s.w-D_DIA_W;
+    if(px_y<0) bl_y = px_y*-1;
+    if(px_y+s.h > D_DIA_H) tr_y = px_y+s.h-D_DIA_H;
+    drawSprite(subSprite(s,bl_x,bl_y,tr_x,tr_y,idx),px_x+bl_x+O_DIA_X,px_y+bl_y+O_DIA_Y);
+  } else {
+    drawSprite(s, px_x+O_DIA_X, px_y+O_DIA_Y, idx);
+  }
 }
 void Dialog_drawText(Text d, Sprite font, int px_x, int px_y, int idx) {
   drawText(d, font, px_x+O_DIA_X, px_y+O_DIA_Y, idx);
@@ -93,8 +114,18 @@ void Dialog_drawText(std::string d, Sprite font, int px_x, int px_y) {
 }
 
 const int O_MEN_X=0, O_MEN_Y=256, D_MEN_W=256, D_MEN_H=768;
-void Menu_drawSprite(Sprite x, int px_x, int px_y, int idx) {
-  drawSprite(x, px_x+O_MEN_X, px_y+O_MEN_Y, idx);
+void Menu_drawSprite(Sprite s, int px_x, int px_y, int idx) {
+  //clip sprite if needed
+  if((px_x<0 || px_x+s.w > D_MEN_W) || (px_y<0 || px_y+s.h > D_MEN_H)) {
+    int bl_x=0, bl_y=0, tr_x=0, tr_y=0;
+    if(px_x<0) bl_x = px_x*-1;
+    if(px_x+s.w > D_MEN_W) tr_x = px_x+s.w-D_MEN_W;
+    if(px_y<0) bl_y = px_y*-1;
+    if(px_y+s.h > D_MEN_H) tr_y = px_y+s.h-D_MEN_H;
+    drawSprite(subSprite(s,bl_x,bl_y,tr_x,tr_y,idx),px_x+bl_x+O_MEN_X,px_y+bl_y+O_MEN_Y);
+  } else {
+    drawSprite(s, px_x+O_MEN_X, px_y+O_MEN_Y, idx);
+  }
 }
 void Menu_drawText(Text d, Sprite font, int px_x, int px_y, int idx) {
   drawText(d, font, px_x+O_MEN_X, px_y+O_MEN_Y, idx);
@@ -110,8 +141,18 @@ void Menu_drawText(std::string d, Sprite font, int px_x, int px_y) {
 }
 
 const int O_IMG_X=0, O_IMG_Y=0, D_IMG_W=256, D_IMG_H=256;
-void Image_drawSprite(Sprite x, int px_x, int px_y, int idx) {
-  drawSprite(x, px_x+O_IMG_X, px_y+O_IMG_Y, idx);
+void Image_drawSprite(Sprite s, int px_x, int px_y, int idx) {
+  //clip sprite if needed
+  if((px_x<0 || px_x+s.w > D_IMG_W) || (px_y<0 || px_y+s.h > D_IMG_H)) {
+    int bl_x=0, bl_y=0, tr_x=0, tr_y=0;
+    if(px_x<0) bl_x = px_x*-1;
+    if(px_x+s.w > D_IMG_W) tr_x = px_x+s.w-D_IMG_W;
+    if(px_y<0) bl_y = px_y*-1;
+    if(px_y+s.h > D_IMG_H) tr_y = px_y+s.h-D_IMG_H;
+    drawSprite(subSprite(s,bl_x,bl_y,tr_x,tr_y,idx),px_x+bl_x+O_IMG_X,px_y+bl_y+O_IMG_Y);
+  } else {
+    drawSprite(s, px_x+O_IMG_X, px_y+O_IMG_Y, idx);
+  }
 }
 void Image_drawText(Text d, Sprite font, int px_x, int px_y, int idx) {
   drawText(d, font, px_x+O_IMG_X, px_y+O_IMG_Y, idx);
@@ -127,8 +168,18 @@ void Image_drawText(std::string d, Sprite font, int px_x, int px_y) {
 }
 
 const int O_BAR_X=0, O_BAR_Y=1024, D_BAR_W=1920, D_BAR_H=56;
-void Bar_drawSprite(Sprite x, int px_x, int px_y, int idx) {
-  drawSprite(x, px_x+O_BAR_X, px_y+O_BAR_Y, idx);
+void Bar_drawSprite(Sprite s, int px_x, int px_y, int idx) {
+  //clip sprite if needed
+  if((px_x<0 || px_x+s.w > D_BAR_W) || (px_y<0 || px_y+s.h > D_BAR_H)) {
+    int bl_x=0, bl_y=0, tr_x=0, tr_y=0;
+    if(px_x<0) bl_x = px_x*-1;
+    if(px_x+s.w > D_BAR_W) tr_x = px_x+s.w-D_BAR_W;
+    if(px_y<0) bl_y = px_y*-1;
+    if(px_y+s.h > D_BAR_H) tr_y = px_y+s.h-D_BAR_H;
+    drawSprite(subSprite(s,bl_x,bl_y,tr_x,tr_y,idx),px_x+bl_x+O_BAR_X,px_y+bl_y+O_BAR_Y);
+  } else {
+    drawSprite(s, px_x+O_BAR_X, px_y+O_BAR_Y, idx);
+  }
 }
 void Bar_drawText(Text d, Sprite font, int px_x, int px_y, int idx) {
   drawText(d, font, px_x+O_BAR_X, px_y+O_BAR_Y, idx);

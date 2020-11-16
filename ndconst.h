@@ -16,6 +16,7 @@ extern const float WIN_S;
 /*
  * "Primitive" functions not tied to a particular component
 */
+//draw sprites/text
 void drawSprite(Sprite s, int px_x, int px_y, int idx=0);
 void drawText(Text d, Sprite font, int px_x, int px_y, int idx=0);
 void drawText(std::string d, Sprite font, int px_x, int px_y);

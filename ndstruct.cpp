@@ -2,42 +2,23 @@
 #include <stdio.h>
 #include <iostream>
 
-/*
-struct Sprite {
-  int w;
-  int h;
-  int ct;
-  uint32_t* list;
-};
-
-struct Text {
-  int ct;
-  std::string* list;
-};
-
-/*
-void drawSprite(Sprite s, int px_x, int px_y, int idx) {
-  if(idx >= s.ct) return; //return if idx is too high
-  idx = s.ct-(idx+1); //invert index
-  int offset = idx*(s.w*s.h);
-  //set position
-  glRasterPos2i(px_x, px_y);
-  //draw sprite
-  glDrawPixels(s.w, s.h, GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, s.list+offset);
-}
-
-
-void drawDialog(Dialog d, Sprite font, int px_x, int px_y, int idx) {
-  if(idx >= d.ct) return; //return if idx is too high
-  std::string line = d.list[idx];
-  for(int n=0; n<line.length(); n++) {
-    if(line[n] == ' ') {
-      px_x += 32;
-      continue;
+Sprite subSprite(Sprite s, int bl_x, int bl_y, int tr_x, int tr_y, int idx) {
+  Sprite sub;
+  sub.w = s.w-bl_x-tr_x;
+  sub.h = s.h-bl_y-tr_y;
+  sub.ct = 1;
+  sub.list = new uint32_t[sub.w*sub.h];
+  //populate sub.list
+  int y_bound = s.h-tr_y;
+  int x_bound = s.w-tr_x;
+  int offset_idx = idx*s.w*s.h;
+  for(int y=bl_y; y<y_bound; y++) {
+    for(int x=bl_x; x<x_bound; x++) {
+      int offset_original = x+(y*s.w);
+      int offset_sub      = (x-bl_x)+((y-bl_y)*sub.w);
+      *(sub.list+offset_idx+offset_sub) = *(s.list+offset_original);
     }
-    int letter_idx = line[n]-65;
-    drawSprite(font, px_x, px_y, letter_idx);
-    px_x += 32;
   }
+
+  return sub;
 }
-*/

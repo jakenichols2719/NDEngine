@@ -1,6 +1,5 @@
 #include "ndgl.h"
 #include "load.h"
-#include "ndstatic.h"
 
 Sprite img;
 Sprite font;
@@ -13,15 +12,17 @@ void display(void)
   glRasterPos2i (100, 100);
   glPixelZoom(WIN_S,WIN_S);
   drawLayout();
+  Display_drawSprite(img, 1600, 700, 0);
+  //drawSprite(subSprite(img,20,20,0,0), 256,256);
   glutSwapBuffers();
 }
 
 int main(int argc, char** argv)
 {
-  img.w = DIM_IMG;
-  img.h = DIM_IMG;
+  img.w = 256;
+  img.h = 256;
   img.ct = 1;
-  //img.list = loadImage("portrait");
+  img.list = loadImage("portrait");
   font.w = 12;
   font.h = 16;
   font.ct = 64;
