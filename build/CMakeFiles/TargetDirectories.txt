@@ -1,3 +1,0 @@
-/home/jn/Documents/Personal/NDEngine/build/CMakeFiles/rebuild_cache.dir
-/home/jn/Documents/Personal/NDEngine/build/CMakeFiles/edit_cache.dir
-/home/jn/Documents/Personal/NDEngine/build/CMakeFiles/run.exe.dir

@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/jn/Documents/Personal/NDEngine/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jn/Documents/Personal/NDEngine/build
+CMAKE_BINARY_DIR = /home/jn/Documents/Personal/NDEngine
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jn/Documents/Personal/NDEngine/build/CMakeFiles /home/jn/Documents/Personal/NDEngine/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jn/Documents/Personal/NDEngine/CMakeFiles /home/jn/Documents/Personal/NDEngine/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jn/Documents/Personal/NDEngine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jn/Documents/Personal/NDEngine/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

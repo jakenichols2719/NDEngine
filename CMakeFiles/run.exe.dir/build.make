@@ -46,7 +46,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/jn/Documents/Personal/NDEngine/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jn/Documents/Personal/NDEngine/build
+CMAKE_BINARY_DIR = /home/jn/Documents/Personal/NDEngine
 
 # Include any dependencies generated for this target.
 include CMakeFiles/run.exe.dir/depend.make
@@ -58,8 +58,8 @@ include CMakeFiles/run.exe.dir/progress.make
 include CMakeFiles/run.exe.dir/flags.make
 
 CMakeFiles/run.exe.dir/run.cpp.o: CMakeFiles/run.exe.dir/flags.make
-CMakeFiles/run.exe.dir/run.cpp.o: /home/jn/Documents/Personal/NDEngine/src/run.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jn/Documents/Personal/NDEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/run.exe.dir/run.cpp.o"
+CMakeFiles/run.exe.dir/run.cpp.o: src/run.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jn/Documents/Personal/NDEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/run.exe.dir/run.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/run.exe.dir/run.cpp.o -c /home/jn/Documents/Personal/NDEngine/src/run.cpp
 
 CMakeFiles/run.exe.dir/run.cpp.i: cmake_force
@@ -71,8 +71,8 @@ CMakeFiles/run.exe.dir/run.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jn/Documents/Personal/NDEngine/src/run.cpp -o CMakeFiles/run.exe.dir/run.cpp.s
 
 CMakeFiles/run.exe.dir/ndstruct.cpp.o: CMakeFiles/run.exe.dir/flags.make
-CMakeFiles/run.exe.dir/ndstruct.cpp.o: /home/jn/Documents/Personal/NDEngine/src/ndstruct.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jn/Documents/Personal/NDEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/run.exe.dir/ndstruct.cpp.o"
+CMakeFiles/run.exe.dir/ndstruct.cpp.o: src/ndstruct.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jn/Documents/Personal/NDEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/run.exe.dir/ndstruct.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/run.exe.dir/ndstruct.cpp.o -c /home/jn/Documents/Personal/NDEngine/src/ndstruct.cpp
 
 CMakeFiles/run.exe.dir/ndstruct.cpp.i: cmake_force
@@ -84,8 +84,8 @@ CMakeFiles/run.exe.dir/ndstruct.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jn/Documents/Personal/NDEngine/src/ndstruct.cpp -o CMakeFiles/run.exe.dir/ndstruct.cpp.s
 
 CMakeFiles/run.exe.dir/ndconst.cpp.o: CMakeFiles/run.exe.dir/flags.make
-CMakeFiles/run.exe.dir/ndconst.cpp.o: /home/jn/Documents/Personal/NDEngine/src/ndconst.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jn/Documents/Personal/NDEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/run.exe.dir/ndconst.cpp.o"
+CMakeFiles/run.exe.dir/ndconst.cpp.o: src/ndconst.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jn/Documents/Personal/NDEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/run.exe.dir/ndconst.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/run.exe.dir/ndconst.cpp.o -c /home/jn/Documents/Personal/NDEngine/src/ndconst.cpp
 
 CMakeFiles/run.exe.dir/ndconst.cpp.i: cmake_force
@@ -97,8 +97,8 @@ CMakeFiles/run.exe.dir/ndconst.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jn/Documents/Personal/NDEngine/src/ndconst.cpp -o CMakeFiles/run.exe.dir/ndconst.cpp.s
 
 CMakeFiles/run.exe.dir/load.cpp.o: CMakeFiles/run.exe.dir/flags.make
-CMakeFiles/run.exe.dir/load.cpp.o: /home/jn/Documents/Personal/NDEngine/src/load.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jn/Documents/Personal/NDEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/run.exe.dir/load.cpp.o"
+CMakeFiles/run.exe.dir/load.cpp.o: src/load.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jn/Documents/Personal/NDEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/run.exe.dir/load.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/run.exe.dir/load.cpp.o -c /home/jn/Documents/Personal/NDEngine/src/load.cpp
 
 CMakeFiles/run.exe.dir/load.cpp.i: cmake_force
@@ -129,7 +129,7 @@ run.exe: /usr/lib/x86_64-linux-gnu/libGLU.so
 run.exe: /usr/lib/x86_64-linux-gnu/libglut.so
 run.exe: /usr/lib/x86_64-linux-gnu/libXi.so
 run.exe: CMakeFiles/run.exe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jn/Documents/Personal/NDEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable run.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jn/Documents/Personal/NDEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable run.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run.exe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -142,6 +142,6 @@ CMakeFiles/run.exe.dir/clean:
 .PHONY : CMakeFiles/run.exe.dir/clean
 
 CMakeFiles/run.exe.dir/depend:
-	cd /home/jn/Documents/Personal/NDEngine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jn/Documents/Personal/NDEngine/src /home/jn/Documents/Personal/NDEngine/src /home/jn/Documents/Personal/NDEngine/build /home/jn/Documents/Personal/NDEngine/build /home/jn/Documents/Personal/NDEngine/build/CMakeFiles/run.exe.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jn/Documents/Personal/NDEngine && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jn/Documents/Personal/NDEngine/src /home/jn/Documents/Personal/NDEngine/src /home/jn/Documents/Personal/NDEngine /home/jn/Documents/Personal/NDEngine /home/jn/Documents/Personal/NDEngine/CMakeFiles/run.exe.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run.exe.dir/depend
 

@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/jn/Documents/Personal/NDEngine/src")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/jn/Documents/Personal/NDEngine/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/jn/Documents/Personal/NDEngine")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)
