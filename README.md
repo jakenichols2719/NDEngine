@@ -49,3 +49,8 @@ The components are:
 
 Named as such because that is their expected usage, but you may use them how
 you like.
+
+
+=====BUILDING=====
+Building is currently done with CMake. Run as you normally would. The program
+should be capable of running with just the generated run.exe and the res folder.
