@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/run.exe.dir/run.cpp.o CMakeFiles/run.exe.dir/ndstruct.cpp.o CMakeFiles/run.exe.dir/ndconst.cpp.o CMakeFiles/run.exe.dir/load.cpp.o  -o run.exe  /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so /usr/lib/x86_64-linux-gnu/libXi.so 
