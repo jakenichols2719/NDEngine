@@ -5,6 +5,15 @@ Sprite img;
 Sprite font;
 Text dia;
 
+int _x=-100;
+int _y=-100;
+void update() {
+  float sec = delta/1000.0;
+  _x+=(int)(100*sec);
+  _y+=(int)(100*sec);
+  Display_drawSprite(img, _x, _y);
+}
+
 void display(void)
 {
   glClear(GL_COLOR_BUFFER_BIT);
@@ -12,17 +21,16 @@ void display(void)
   glRasterPos2i (100, 100);
   glPixelZoom(WIN_S,WIN_S);
   drawLayout();
-  Display_drawSprite(img, 1600, 700, 0);
-  //drawSprite(subSprite(img,20,20,0,0), 256,256);
+  update();
   glutSwapBuffers();
 }
 
 int main(int argc, char** argv)
 {
-  img.w = 256;
-  img.h = 256;
+  img.w = 598;
+  img.h = 598;
   img.ct = 1;
-  img.list = loadImage("portrait");
+  img.list = loadImage("pack");
   font.w = 12;
   font.h = 16;
   font.ct = 64;

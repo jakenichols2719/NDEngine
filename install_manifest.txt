@@ -1,0 +1,5 @@
+/usr/local/lib/libnd_base.a
+/usr/local/include/ndgl.h
+/usr/local/include/load.h
+/usr/local/include/ndconst.h
+/usr/local/include/ndstruct.h

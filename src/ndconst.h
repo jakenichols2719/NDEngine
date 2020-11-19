@@ -7,11 +7,21 @@
 #define NDCONST_H_
 
 #include "ndstruct.h"
+#include <chrono> //for time tracking
 
 //resolution and scale
 extern const int WIN_W;
 extern const int WIN_H;
 extern const float WIN_S;
+
+//delta tracking
+extern const int TARGET_FPS; //target frames per second
+extern const int TARGET_MS; //target ms per frame
+extern int delta; //previous delta value
+
+//key tracking
+extern bool* key_down;
+bool getKey(char key, bool just_pressed=false);
 
 /*
  * "Primitive" functions not tied to a particular component

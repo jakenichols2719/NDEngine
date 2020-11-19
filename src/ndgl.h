@@ -8,6 +8,7 @@
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include <iostream>
+#include <stdlib.h>
 #include "ndconst.h"
 
 //base resolution is 1080p
@@ -18,6 +19,27 @@
 //constants for image sizes
 const int DIM_SPRITE = 32;
 const int DIM_IMG = 256;
+
+//test vars
+int test[32];
+
+
+//get current time as long because screw std::chrono
+long time() {
+  auto dur = std::chrono::system_clock::now().time_since_epoch();
+  long ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+  return ms;
+}
+//time tracking
+int elapsed_time = 0;
+long old_time = time();
+int updateDelta() {
+  long new_time = time();
+  int delta_ms = new_time-old_time;
+  old_time = new_time;
+  delta = delta_ms;
+  return delta_ms;
+}
 
 void init(void)
 {
@@ -38,10 +60,11 @@ void reshape(int w, int h)
 
 void keyboard(unsigned char key, int x, int y)
 {
-   switch (key) {
-      case 27:
-         exit(0);
-   }
+  key_down[key] = true;
+  switch (key) {
+    case 27:
+      exit(0);
+  }
 }
 
 void special(int key, int x, int y)
@@ -59,8 +82,22 @@ void special(int key, int x, int y)
   glutPostRedisplay();
 }
 
-//fwd declare
+/*
+ * Forward declarations:
+ * Update: should be implemented by user
+ * Display: callback for glut
+ * drawLayout: implemented below
+*/
+void update();
 void display(void);
+void drawLayout(void);
+
+void frame(int frame_ct) {
+  updateDelta();
+  elapsed_time += delta;
+  glutPostRedisplay();
+  glutTimerFunc(TARGET_MS, frame, frame_ct+1);
+}
 
 /*
  * Draws the outlines for the window format
@@ -96,5 +133,6 @@ void startGL(int* argc, char* argv[]){
   glutKeyboardFunc(keyboard);
   glutSpecialFunc(special);
   glutDisplayFunc(display);
+  glutTimerFunc(TARGET_MS, frame, 0);
   glutMainLoop();
 }
