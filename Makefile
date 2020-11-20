@@ -48,7 +48,7 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jn/Documents/Personal/NDEngine/src
+CMAKE_SOURCE_DIR = /home/jn/Documents/Personal/NDEngine
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/jn/Documents/Personal/NDEngine
@@ -111,98 +111,98 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named run.exe
+# Target rules for targets named run
 
 # Build rule for target.
-run.exe: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run.exe
-.PHONY : run.exe
+run: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run
+.PHONY : run
 
 # fast build rule for target.
-run.exe/fast:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/build
-.PHONY : run.exe/fast
+run/fast:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
+.PHONY : run/fast
 
-load.o: load.cpp.o
+base/load.o: base/load.cpp.o
 
-.PHONY : load.o
-
-# target to build an object file
-load.cpp.o:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/load.cpp.o
-.PHONY : load.cpp.o
-
-load.i: load.cpp.i
-
-.PHONY : load.i
-
-# target to preprocess a source file
-load.cpp.i:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/load.cpp.i
-.PHONY : load.cpp.i
-
-load.s: load.cpp.s
-
-.PHONY : load.s
-
-# target to generate assembly for a file
-load.cpp.s:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/load.cpp.s
-.PHONY : load.cpp.s
-
-ndconst.o: ndconst.cpp.o
-
-.PHONY : ndconst.o
+.PHONY : base/load.o
 
 # target to build an object file
-ndconst.cpp.o:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/ndconst.cpp.o
-.PHONY : ndconst.cpp.o
+base/load.cpp.o:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/base/load.cpp.o
+.PHONY : base/load.cpp.o
 
-ndconst.i: ndconst.cpp.i
+base/load.i: base/load.cpp.i
 
-.PHONY : ndconst.i
+.PHONY : base/load.i
 
 # target to preprocess a source file
-ndconst.cpp.i:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/ndconst.cpp.i
-.PHONY : ndconst.cpp.i
+base/load.cpp.i:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/base/load.cpp.i
+.PHONY : base/load.cpp.i
 
-ndconst.s: ndconst.cpp.s
+base/load.s: base/load.cpp.s
 
-.PHONY : ndconst.s
+.PHONY : base/load.s
 
 # target to generate assembly for a file
-ndconst.cpp.s:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/ndconst.cpp.s
-.PHONY : ndconst.cpp.s
+base/load.cpp.s:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/base/load.cpp.s
+.PHONY : base/load.cpp.s
 
-ndstruct.o: ndstruct.cpp.o
+base/ndconst.o: base/ndconst.cpp.o
 
-.PHONY : ndstruct.o
+.PHONY : base/ndconst.o
 
 # target to build an object file
-ndstruct.cpp.o:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/ndstruct.cpp.o
-.PHONY : ndstruct.cpp.o
+base/ndconst.cpp.o:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/base/ndconst.cpp.o
+.PHONY : base/ndconst.cpp.o
 
-ndstruct.i: ndstruct.cpp.i
+base/ndconst.i: base/ndconst.cpp.i
 
-.PHONY : ndstruct.i
+.PHONY : base/ndconst.i
 
 # target to preprocess a source file
-ndstruct.cpp.i:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/ndstruct.cpp.i
-.PHONY : ndstruct.cpp.i
+base/ndconst.cpp.i:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/base/ndconst.cpp.i
+.PHONY : base/ndconst.cpp.i
 
-ndstruct.s: ndstruct.cpp.s
+base/ndconst.s: base/ndconst.cpp.s
 
-.PHONY : ndstruct.s
+.PHONY : base/ndconst.s
 
 # target to generate assembly for a file
-ndstruct.cpp.s:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/ndstruct.cpp.s
-.PHONY : ndstruct.cpp.s
+base/ndconst.cpp.s:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/base/ndconst.cpp.s
+.PHONY : base/ndconst.cpp.s
+
+base/ndstruct.o: base/ndstruct.cpp.o
+
+.PHONY : base/ndstruct.o
+
+# target to build an object file
+base/ndstruct.cpp.o:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/base/ndstruct.cpp.o
+.PHONY : base/ndstruct.cpp.o
+
+base/ndstruct.i: base/ndstruct.cpp.i
+
+.PHONY : base/ndstruct.i
+
+# target to preprocess a source file
+base/ndstruct.cpp.i:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/base/ndstruct.cpp.i
+.PHONY : base/ndstruct.cpp.i
+
+base/ndstruct.s: base/ndstruct.cpp.s
+
+.PHONY : base/ndstruct.s
+
+# target to generate assembly for a file
+base/ndstruct.cpp.s:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/base/ndstruct.cpp.s
+.PHONY : base/ndstruct.cpp.s
 
 run.o: run.cpp.o
 
@@ -210,7 +210,7 @@ run.o: run.cpp.o
 
 # target to build an object file
 run.cpp.o:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/run.cpp.o
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/run.cpp.o
 .PHONY : run.cpp.o
 
 run.i: run.cpp.i
@@ -219,7 +219,7 @@ run.i: run.cpp.i
 
 # target to preprocess a source file
 run.cpp.i:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/run.cpp.i
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/run.cpp.i
 .PHONY : run.cpp.i
 
 run.s: run.cpp.s
@@ -228,7 +228,7 @@ run.s: run.cpp.s
 
 # target to generate assembly for a file
 run.cpp.s:
-	$(MAKE) -f CMakeFiles/run.exe.dir/build.make CMakeFiles/run.exe.dir/run.cpp.s
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/run.cpp.s
 .PHONY : run.cpp.s
 
 # Help Target
@@ -239,16 +239,16 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... run.exe"
-	@echo "... load.o"
-	@echo "... load.i"
-	@echo "... load.s"
-	@echo "... ndconst.o"
-	@echo "... ndconst.i"
-	@echo "... ndconst.s"
-	@echo "... ndstruct.o"
-	@echo "... ndstruct.i"
-	@echo "... ndstruct.s"
+	@echo "... run"
+	@echo "... base/load.o"
+	@echo "... base/load.i"
+	@echo "... base/load.s"
+	@echo "... base/ndconst.o"
+	@echo "... base/ndconst.i"
+	@echo "... base/ndconst.s"
+	@echo "... base/ndstruct.o"
+	@echo "... base/ndstruct.i"
+	@echo "... base/ndstruct.s"
 	@echo "... run.o"
 	@echo "... run.i"
 	@echo "... run.s"

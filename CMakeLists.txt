@@ -1,12 +1,18 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(NDEngine)
-add_executable(run.exe run.cpp ndstruct.cpp ndconst.cpp load.cpp)
+set(SOURCE
+  base/load.cpp
+  base/ndconst.cpp
+  base/ndstruct.cpp
+  run.cpp
+)
+add_executable(run ${SOURCE})
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 include_directories( ${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR})
 
-target_link_libraries(run.exe ${OPENGL_LIBRARIES} ${GLUT_LIBRARY})
+target_link_libraries(run ${OPENGL_LIBRARIES} ${GLUT_LIBRARY})
 
 
 # build library. work on this.

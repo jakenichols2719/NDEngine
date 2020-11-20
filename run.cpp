@@ -1,12 +1,14 @@
-#include "ndgl.h"
-#include "load.h"
+#include "base/load.h"
+#include "base/ndconst.h"
+#include "base/ndstruct.h"
+#include "base/ndgl.h"
 
 Sprite img;
 Sprite font;
 Text dia;
 
-int _x=-100;
-int _y=-100;
+int _x=0;
+int _y=0;
 void update() {
   float sec = delta/1000.0;
   _x+=(int)(100*sec);
